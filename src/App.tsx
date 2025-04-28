@@ -1,14 +1,18 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ThemeProvider } from "./components/theme-provider";
 
 // Pages
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import Landing from "./pages/landing/Landing";
+import About from "./pages/landing/About";
+import Services from "./pages/landing/Services";
+import News from "./pages/landing/News";
+import Contact from "./pages/landing/Contact";
 import LoginPage from "./pages/LoginPage";
+import NotFound from "./pages/NotFound";
 
 // Owner Pages
 import OwnerDashboard from "./pages/owner/OwnerDashboard";
@@ -43,49 +47,56 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          {/* Public Pages */}
-          <Route path="/" element={<Index />} />
-          <Route path="/login" element={<LoginPage />} />
-          
-          {/* Owner Routes */}
-          <Route path="/owner/dashboard" element={<OwnerDashboard />} />
-          <Route path="/owner/admin-koperasi" element={<AdminKoperasi />} />
-          <Route path="/owner/admin-mitra" element={<AdminMitra />} />
-          <Route path="/owner/users" element={<Users />} />
-          <Route path="/owner/laporan" element={<FinancialReports />} />
-          <Route path="/owner/settings" element={<SystemSettings />} />
-          
-          {/* Koperasi Routes */}
-          <Route path="/koperasi/dashboard" element={<KoperasiDashboard />} />
-          <Route path="/koperasi/simpanan" element={<Savings />} />
-          <Route path="/koperasi/pinjaman" element={<Loans />} />
-          <Route path="/koperasi/coa" element={<ChartOfAccounts />} />
-          <Route path="/koperasi/jurnal" element={<GeneralJournal />} />
-          <Route path="/koperasi/laporan" element={<KoperasiReports />} />
-          
-          {/* Mitra Routes */}
-          <Route path="/mitra/dashboard" element={<MitraDashboard />} />
-          <Route path="/mitra/penjualan" element={<Sales />} />
-          <Route path="/mitra/transaksi" element={<Transaction />} />
-          <Route path="/mitra/laporan" element={<SalesReports />} />
-          
-          {/* User Routes */}
-          <Route path="/user/dashboard" element={<UserDashboard />} />
-          <Route path="/user/simpanan" element={<UserSavings />} />
-          <Route path="/user/pinjaman" element={<UserLoans />} />
-          <Route path="/user/pembayaran" element={<InstallmentPayment />} />
-          <Route path="/user/profile" element={<UserProfile />} />
-          
-          {/* Catch-all Route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Landing Pages */}
+            <Route path="/" element={<Navigate to="/landing" replace />} />
+            <Route path="/landing" element={<Landing />} />
+            <Route path="/landing/about" element={<About />} />
+            <Route path="/landing/services" element={<Services />} />
+            <Route path="/landing/news" element={<News />} />
+            <Route path="/landing/contact" element={<Contact />} />
+            <Route path="/login" element={<LoginPage />} />
+            
+            {/* Owner Routes */}
+            <Route path="/owner/dashboard" element={<OwnerDashboard />} />
+            <Route path="/owner/admin-koperasi" element={<AdminKoperasi />} />
+            <Route path="/owner/admin-mitra" element={<AdminMitra />} />
+            <Route path="/owner/users" element={<Users />} />
+            <Route path="/owner/laporan" element={<FinancialReports />} />
+            <Route path="/owner/settings" element={<SystemSettings />} />
+            
+            {/* Koperasi Routes */}
+            <Route path="/koperasi/dashboard" element={<KoperasiDashboard />} />
+            <Route path="/koperasi/simpanan" element={<Savings />} />
+            <Route path="/koperasi/pinjaman" element={<Loans />} />
+            <Route path="/koperasi/coa" element={<ChartOfAccounts />} />
+            <Route path="/koperasi/jurnal" element={<GeneralJournal />} />
+            <Route path="/koperasi/laporan" element={<KoperasiReports />} />
+            
+            {/* Mitra Routes */}
+            <Route path="/mitra/dashboard" element={<MitraDashboard />} />
+            <Route path="/mitra/penjualan" element={<Sales />} />
+            <Route path="/mitra/transaksi" element={<Transaction />} />
+            <Route path="/mitra/laporan" element={<SalesReports />} />
+            
+            {/* User Routes */}
+            <Route path="/user/dashboard" element={<UserDashboard />} />
+            <Route path="/user/simpanan" element={<UserSavings />} />
+            <Route path="/user/pinjaman" element={<UserLoans />} />
+            <Route path="/user/pembayaran" element={<InstallmentPayment />} />
+            <Route path="/user/profile" element={<UserProfile />} />
+            
+            {/* Catch-all Route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 
