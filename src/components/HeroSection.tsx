@@ -24,14 +24,15 @@ const HeroSection = () => {
           
           <div className="md:w-1/2">
             <div className="rounded-lg overflow-hidden shadow-lg aspect-w-16 aspect-h-9">
-              <iframe
-                className="w-full h-full"
+            <iframe
+                className="w-full"
+                style={{ height: '400px' }}
                 src="https://www.youtube.com/embed/zWjTbDW3sQM?autoplay=1&mute=1&loop=1&playlist=zWjTbDW3sQM"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              ></iframe>
+            ></iframe>
             </div>
           </div>
 
