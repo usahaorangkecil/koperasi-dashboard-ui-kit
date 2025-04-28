@@ -11,6 +11,8 @@ import About from "./pages/landing/About";
 import Services from "./pages/landing/Services";
 import News from "./pages/landing/News";
 import Contact from "./pages/landing/Contact";
+import PromoPage from "./pages/landing/PromoPage";
+import MobilePage from "./pages/landing/MobilePage";
 import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 
@@ -60,6 +62,8 @@ const App = () => (
             <Route path="/landing/services" element={<Services />} />
             <Route path="/landing/news" element={<News />} />
             <Route path="/landing/contact" element={<Contact />} />
+            <Route path="/landing/promo" element={<PromoPage />} />
+            <Route path="/landing/mobile" element={<MobilePage />} />
             <Route path="/login" element={<LoginPage />} />
             
             {/* Owner Routes */}
