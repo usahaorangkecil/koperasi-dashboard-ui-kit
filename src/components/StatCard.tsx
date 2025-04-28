@@ -9,7 +9,7 @@ import {
   Building, 
   Activity, 
   ShoppingCart, 
-  Tool, 
+  Wrench, 
   BookOpen 
 } from "lucide-react";
 
@@ -41,7 +41,7 @@ const StatCard = ({ title, value, change, icon, className }: StatCardProps) => {
       case 'shopping-cart':
         return <ShoppingCart className="h-5 w-5 text-indigo-600" />;
       case 'tool':
-        return <Tool className="h-5 w-5 text-yellow-600" />;
+        return <Wrench className="h-5 w-5 text-yellow-600" />;
       case 'book':
         return <BookOpen className="h-5 w-5 text-teal-600" />;
       default:
