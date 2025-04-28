@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const navigation = [
     { name: 'Beranda', href: '/landing', icon: <Home className="w-4 h-4" /> },
-    { name: 'Tentang', href: '/landing/about', icon: <Info className="w-4 h-4" /> },
+    { name: 'Tentang Kami', href: '/landing/about', icon: <Info className="w-4 h-4" /> },
     { name: 'Produk & Layanan', href: '/landing/services', icon: <Package className="w-4 h-4" /> },
     { name: 'Berita / Artikel', href: '/landing/news', icon: <Newspaper className="w-4 h-4" /> },
     { name: 'Kontak', href: '/landing/contact', icon: <Mail className="w-4 h-4" /> },
