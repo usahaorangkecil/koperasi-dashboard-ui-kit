@@ -15,8 +15,6 @@ const Navbar = () => {
     { name: 'Tentang Kami', href: '/landing/about', icon: <Info className="w-4 h-4" /> },
     { name: 'Produk & Layanan', href: '/landing/services', icon: <Package className="w-4 h-4" /> },
     { name: 'Berita / Artikel', href: '/landing/news', icon: <Newspaper className="w-4 h-4" /> },
-    { name: 'Promo', href: '/landing/promo', icon: <Megaphone className="w-4 h-4" /> },
-    { name: 'Mobile', href: '/landing/mobile', icon: <Smartphone className="w-4 h-4" /> },
     { name: 'Kontak', href: '/landing/contact', icon: <Mail className="w-4 h-4" /> },
   ];
 
