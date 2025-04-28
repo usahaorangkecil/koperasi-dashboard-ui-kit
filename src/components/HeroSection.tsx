@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -24,11 +23,19 @@ const HeroSection = () => {
           </div>
           
           <div className="md:w-1/2">
-            <img 
-              src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3" 
-              alt="Koperasi Hero" 
+            <video
               className="rounded-lg shadow-lg"
-            />
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source 
+                src="https://www.youtube.com/watch?v=zWjTbDW3sQM&list=TLGGseXmHQsYxAYyODA0MjAyNQ" 
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
