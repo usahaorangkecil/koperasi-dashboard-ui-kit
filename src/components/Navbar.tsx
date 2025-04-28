@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: 'Tentang', href: '/landing/about', icon: <Info className="w-4 h-4" /> },
     { name: 'Produk & Layanan', href: '/landing/services', icon: <Package className="w-4 h-4" /> },
     { name: 'Berita / Artikel', href: '/landing/news', icon: <Newspaper className="w-4 h-4" /> },
-    { name: 'Hubungi Kami', href: '/landing/contact', icon: <Mail className="w-4 h-4" /> },
+    { name: 'Hubungi', href: '/landing/contact', icon: <Mail className="w-4 h-4" /> },
   ];
 
   const isActive = (path: string) => location.pathname === path;
